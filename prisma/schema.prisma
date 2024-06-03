@@ -45,8 +45,8 @@ model Post {
   author    User      @relation(fields: [authorId], references: [id])
   authorId  String    @db.ObjectId
   likes     Like[]
+  comments  Comment[]
   createdAt DateTime  @default(now())
-  Comment   Comment[]
 }
 
 model Like {
