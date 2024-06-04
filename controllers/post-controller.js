@@ -33,7 +33,7 @@ const PostController = {
         include: {
           likes: true,
           author: true,
-          comment: true,
+          comments: true,
         },
         orderBy: {
           createdAt: "desc",
@@ -61,7 +61,7 @@ const PostController = {
       const post = await prisma.post.findUnique({
         where: { id },
         include: {
-          comment: {
+          comments: {
             include: {
               user: true,
             },
