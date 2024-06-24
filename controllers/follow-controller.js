@@ -43,7 +43,7 @@ const FollowController = {
     try {
       const follows = await prisma.follows.findFirst({
         where: {
-          AND: [{ ffollowerId: userId }, { followingId }],
+          AND: [{ followerId: userId }, { followingId }],
         },
       });
 
