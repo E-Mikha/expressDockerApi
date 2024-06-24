@@ -37,13 +37,13 @@ const FollowController = {
     }
   },
   unfollowUser: async (req, res) => {
-    const { followerId } = req.body;
+    const { followingId } = req.body;
     const userId = req.user.userId;
 
     try {
       const follows = await prisma.follows.findFirst({
         where: {
-          AND: [{ followerId: userId }, { followingId }],
+          AND: [{ ffollowerId: userId }, { followingId }],
         },
       });
 
